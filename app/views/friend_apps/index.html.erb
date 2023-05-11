@@ -1,0 +1,41 @@
+<style>
+  th, td {
+    padding: 25px;
+  }
+  thead {
+    background-color: #343a40;
+    color: white;
+    border: none; /* Remove borders */
+  }
+</style>
+
+
+
+<table class="table table-striped table-bordered table-hover">
+  <thead>
+    <tr>
+      <th style="padding-right: 25px; border: none;">First Name</th>
+      <th style="padding-right: 25px; border: none;">Last Name</th>
+      <th style="padding-right: 25px; border: none;">Email</th>
+      <th style="padding-right: 25px; border: none;">Phone</th>
+      <th style="padding-right: 25px; border: none;">LinkedIn</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @friend_apps.each do |friend_app| %>
+      <tr>
+        <td style="padding-right: 25px;"><%= friend_app.first_name %></td>
+        <td style="padding-right: 25px;"><%= friend_app.last_name %></td>
+        <td style="padding-right: 25px;"><%= friend_app.email %></td>
+        <td style="padding-right: 25px;"><%= friend_app.phone %></td>
+        <td style="padding-right: 25px;"><%= friend_app.linkedin %></td>
+        <td><%= link_to "Show", friend_app %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to "New friend app", new_friend_app_path, class: "btn btn-secondary" %>
+
+<br/><br/>

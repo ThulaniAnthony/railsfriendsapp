@@ -1,0 +1,46 @@
+<%= form_with(model: friend_app, class: "mb-3") do |form| %>
+  <% if friend_app.errors.any? %>
+    <div class="alert alert-danger">
+      <h2><%= pluralize(friend_app.errors.count, "error") %> prohibited this friend_app from being saved:</h2>
+      <ul>
+        <% friend_app.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="mb-3">
+    <div class="col-6">
+      <%= form.text_field :first_name, class: "form-control form-control-sm", placeholder: "First Name" %>
+    </div>
+  </div>
+
+  <div class="mb-3">
+    <div class="col-6">
+      <%= form.text_field :last_name, class: "form-control form-control-sm", placeholder: "Last Name" %>
+    </div>
+  </div>
+
+  <div class="mb-3">
+    <div class="col-6">
+      <%= form.text_field :email, class: "form-control form-control-sm", placeholder: "Email" %>
+    </div>
+  </div>
+
+  <div class="mb-3">
+    <div class="col-6">
+      <%= form.text_field :phone, class: "form-control form-control-sm", placeholder: "Phone" %>
+    </div>
+  </div>
+
+  <div class="mb-3">
+    <div class="col-6">
+      <%= form.text_field :linkedin, class: "form-control form-control-sm", placeholder: "LinkedIn" %>
+    </div>
+  </div>
+
+  <div>
+    <%= form.submit "Add Friend To The List", class: "btn btn-secondary" %>
+  </div>
+<% end %>

@@ -1,0 +1,10 @@
+
+
+<%= render @friend_app %>
+
+<div>
+  <%= link_to "Edit", edit_friend_app_path(@friend_app), class:"btn btn-secondary"%> 
+  <%= link_to "Back", friend_apps_path, class:"btn btn-secondary"%>
+</br></br>
+  <%= button_to "Delete This Friend", @friend_app, method: :delete, class:"btn btn-danger"%>
+</div>
